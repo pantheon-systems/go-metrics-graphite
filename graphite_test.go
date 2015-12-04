@@ -35,7 +35,7 @@ func ExampleGraphiteWithConfig() {
 func NewTestServer(t *testing.T, prefix string) (map[string]float64, net.Listener, metrics.Registry, GraphiteConfig, *sync.WaitGroup) {
 	res := make(map[string]float64)
 
-	ln, err := net.Listen("tcp", "127.0.0.1:0")
+	ln, err := net.Listen("tcp", ":0")
 	if err != nil {
 		t.Fatal("could not start dummy server:", err)
 	}
